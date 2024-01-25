@@ -1,9 +1,28 @@
+#include <stdio.h>
+#include "NumClass.h"
+
 int power(int base, int exponent) {
     int result = 1;
     for (int i = 1; i <= exponent; i++) {
         result *= base;
     }
     return result;
+}
+
+int countDigits(int num) {
+    if (num == 0) {
+        return 1; // Special case for 0
+    }
+
+    int count = 0;
+    int temp= num;
+
+    while (temp > 0) {
+        temp = temp / 10;
+        count++;
+    }
+
+    return count;
 }
 
 // check if a number is Armstrong with recursion
@@ -19,14 +38,8 @@ int isArmstrong(int num) {
      if (num <=0) {
         return 0; // Negative numbers are not considered Armstrong numbers
     }
-    int n = 0;
-    int temp = num;
+    int n =countDigits(num); 
 
-    // Num of digits in the number
-    while (temp != 0) {
-        temp /= 10;
-        n++;
-    }
 
     int sum = isArmstrongRecursive(num, n);
 
@@ -43,11 +56,13 @@ int isPalindromeRec(int arr[],int start,int end){
     return 1;
 }
 
+
+
 int isPalindrome(int num){
     if (num <0) {
         return 0; // Negative numbers are not considered Palindrome numbers
     }
-    int size=log10(num);
+    int size =countDigits(num);
     int arr [size+1];
     int count=0;
     int numSaver=num;
