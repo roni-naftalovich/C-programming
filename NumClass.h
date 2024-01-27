@@ -1,7 +1,15 @@
-int isArmstrong(int);
+#ifndef NUMCLASS_H
+#define NUMCLASS_H
 
-int isPalindrome(int);
+// Function declarations
+int isPrime(int num);
+int factorial(int num);
+int isStrong(int num);
+int isPalindrome(int num);
+int isArmstrong(int num);
+int countDigits(int num);
+int isPalindromeRec(int arr[], int start, int end);
+int isArmstrongRecursive(int num, int n);
+int power(int base, int exponent);
 
-int isPrime(int);
-
-int isStrong (int);
+#endif  // NUMCLASS_H
