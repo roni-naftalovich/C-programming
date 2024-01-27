@@ -7,6 +7,12 @@ int main(){
     scanf("%d", &num1);
     scanf("%d", &num2);
 
+    if(num1>num2){
+        int temp= num1;
+        num1=num2;
+        num2=temp;
+    }
+
     int i;
     
     printf("The Armstrong numbers are:");
